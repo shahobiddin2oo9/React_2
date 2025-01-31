@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Header.scss";
+import "./main";
 import logo from "../assets/logo.svg";
 import vidoe from "../assets/video.svg";
 import sad from "../assets/21.png";

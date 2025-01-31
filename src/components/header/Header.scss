@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 .container {
-  max-width: 1320px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -35,6 +35,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
   box-shadow: #2c2d2e;
   ul {
     display: flex;
@@ -42,6 +43,7 @@ header {
     li {
       list-style-type: none;
       display: flex;
+      flex-wrap: wrap;
       gap: 16px;
       a {
         text-decoration: none;
@@ -60,7 +62,6 @@ header {
   }
   .nav-btn {
     display: flex;
-    align-items: center;
     gap: 8px;
     a {
       text-decoration: none;
@@ -81,8 +82,6 @@ main {
     background-image: url(../assets/bg.jpg);
     background-size: cover;
     background-position: center;
-    background-color: rgba(0, 0, 0, 0.082);
-    background-blend-mode: darken;
     padding: 162px 116px 154px;
     .left {
       max-width: 582px;
@@ -140,8 +139,17 @@ main {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      @media (max-width: 1214px) {
+        & {
+          flex-direction: column;
+        }
+      }
+      img {
+        width: 100%;
+      }
       .one_pg-2 {
         max-width: 552px;
+
         p {
           font-family: Montserrat;
           font-size: 15px;
@@ -167,10 +175,35 @@ main {
       }
     }
     .cards {
-      display: flex;
+      display: grid;
       align-items: center;
+      grid-template-columns: repeat(5, 1fr);
       justify-content: space-between;
       margin-top: 32px;
+      @media (max-width: 1067px) {
+        & {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 30px;
+        }
+      }
+      @media (max-width: 928px) {
+        & {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 30px;
+        }
+      }
+      @media (max-width: 700px) {
+        & {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 30px;
+        }
+      }
+      @media (max-width: 489px) {
+        & {
+          grid-template-columns: repeat(1, 1fr);
+          gap: 30px;
+        }
+      }
     }
   }
   .two_pg {
@@ -189,6 +222,7 @@ main {
       align-items: center;
       justify-content: center;
       margin-top: 16px;
+      flex-wrap: wrap;
       gap: 16px;
       button {
         padding: 12.5px 20px;
@@ -211,10 +245,33 @@ main {
       }
     }
     .two_pg_cards {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
       align-items: center;
       justify-content: space-between;
       margin: 32px 0;
+      @media (max-width: 1067px) {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+      }
+      @media (max-width: 928px) {
+        & {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 30px;
+        }
+      }
+      @media (max-width: 700px) {
+        & {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 30px;
+        }
+      }
+      @media (max-width: 489px) {
+        & {
+          grid-template-columns: repeat(1, 1fr);
+          gap: 30px;
+        }
+      }
     }
     .btn_Eww {
       padding: 12.5px 20px;
@@ -266,6 +323,7 @@ main {
       .uses {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 12px;
         .use_1 {
           input {
@@ -274,10 +332,6 @@ main {
             border-radius: 4px;
             border: 0.5px solid rgba(0, 0, 0, 0.438);
           }
-          img {
-            position: absolute;
-            left: 140px;
-          }
         }
         .use_2 {
           input {
@@ -285,10 +339,6 @@ main {
             position: relative;
             border-radius: 4px;
             border: 0.5px solid rgba(0, 0, 0, 0.438);
-          }
-          img {
-            position: absolute;
-            left: 260px;
           }
         }
       }
@@ -313,13 +363,37 @@ main {
       }
     }
     .people-cards {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
       align-items: center;
       justify-content: space-between;
+      @media (max-width: 1067px) {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+      }
+      @media (max-width: 928px) {
+        & {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 30px;
+        }
+      }
+      @media (max-width: 700px) {
+        & {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 30px;
+        }
+      }
+      @media (max-width: 489px) {
+        & {
+          grid-template-columns: repeat(1, 1fr);
+          gap: 30px;
+        }
+      }
       .people_card {
         max-width: 204px;
         img {
           border-radius: 100px;
+          width: 100%;
         }
         h5 {
           font-family: Montserrat;
@@ -377,7 +451,9 @@ main {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
       .footer_card {
+        margin: 0 auto;
         img {
           width: 100%;
           height: 203px;
